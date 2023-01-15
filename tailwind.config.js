@@ -8,9 +8,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["Aboreto", "cursive"],
+        heading: ["Poppins", "sans-serif"],
         body: ["Poppins", "sans-serif"],
       },
+      transitionProperty: {
+        top: "top",
+      }
     },
   },
   plugins: [],

@@ -1,3 +1,4 @@
+import { BlogPosts } from "components/BlogPosts";
 import { CallToActionButton } from "components/CallToActionButton";
 import { Column } from "components/Column";
 import { Columns } from "components/Columns";
@@ -5,10 +6,12 @@ import { Cover } from "components/Cover";
 import { FormspreeForm } from "components/FormspreeForm";
 import { Gallery } from "components/Gallery";
 import { Heading } from "components/Heading";
+import { List } from "components/List";
+import { ListItem } from "components/ListItem";
 import { Paragraph } from "components/Paragraph";
 import { PostTitle } from "components/PostTitle";
 import { PropertyFeatures } from "components/PropertyFeatures";
-import { PropertySearch } from "components/PropertySearch";
+//import { PropertySearch } from "components/PropertySearch";
 import { TickItem } from "components/TickItem";
 import Image from "next/image";
 import { theme } from "theme";
@@ -62,21 +65,43 @@ export const BlockRenderer = ({blocks}) => {
                     </Column>
                 )
             }
+            case "core/list-item": {
+                return (
+                    <ListItem 
+                        key={block.id}
+                        content={block.attributes.content}
+                    />
+                )
+            }
+            case "core/list": {
+                return (
+                    <List 
+                        key={block.id}
+                        ordered={block.attributes.ordered} 
+                    >
+                        <BlockRenderer blocks={block.innerBlocks} />
+                    </List>
+                )
+            }
             case "core/block":
             case "core/group": {
                 return (
-                    <BlockRenderer key={block.id} blocks={block.innerBlocks} />
+                    <BlockRenderer 
+                        key={block.id} 
+                        blocks={block.innerBlocks} 
+                    />
                 )
             }
             case "core/image": {
                 return (
+                    <div key={block.id} className="max-w-5xl mx-auto md:px-3 pb-3">
                     <Image 
-                        key={block.id} 
                         src={block.attributes.url} 
                         height={block.attributes.height} 
                         width={block.attributes.width} 
                         alt={block.attributes.alt || ""} 
                     />
+                    </div>
                 )
             }
             case "acf/tickitem": {
@@ -97,7 +122,7 @@ export const BlockRenderer = ({blocks}) => {
             }
             case "acf/propertysearch": {
                 return (
-                    <PropertySearch key={block.id} />
+                    <BlogPosts key={block.id} />
                 )
             }
             case "acf/propertyfeatures": {

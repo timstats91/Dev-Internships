@@ -16,12 +16,7 @@ export const getStaticPaths = async () => {
                         uri
                     }
                 }
-                properties {
-                    nodes {
-                        uri
-                    }
-                }
-                posts {
+                posts(first: 500) {
                     nodes {
                         uri
                     }
@@ -31,7 +26,7 @@ export const getStaticPaths = async () => {
     });
 
     return {
-        paths: [...data.pages.nodes, ...data.properties.nodes, ...data.posts.nodes]
+        paths: [...data.pages.nodes, ...data.posts.nodes]
             .filter((page) => page.uri !== "/")
             .map(page => ({
                 params: {

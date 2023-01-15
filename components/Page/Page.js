@@ -1,14 +1,14 @@
 import { BlockRenderer } from "components/BlockRenderer";
 import { MainMenu } from "components/MainMenu";
+import { Footer } from "components/Footer";
 import { PageWrapper } from "context/page";
 import Head from "next/head";
 
 export const Page = (props) => {
     return (
         <PageWrapper 
-            className="pb-10" 
             value={{
-                propertyFeatures: props.propertyFeatures, 
+                //propertyFeatures: props.propertyFeatures, 
                 title: props.title, 
                 featuredImage: props.featuredImage
             }}
@@ -16,6 +16,10 @@ export const Page = (props) => {
             <Head>
                 <title>{props.seo.title}</title>
                 <meta name="description" content={props.seo.metaDesc} />
+                <meta property="og:title" content={props.title} />
+                <meta property="og:description" content={props.seo.metaDesc} />
+                <meta property="og:image" content={props.featuredImage} />
+
             </Head>
             <MainMenu 
                 items={props.mainMenuItems} 
@@ -23,6 +27,7 @@ export const Page = (props) => {
                 callToActionLabel={props.callToActionLabel} 
             />
             <BlockRenderer blocks={props.blocks} />
+            <Footer />
         </PageWrapper>
     );
 };
