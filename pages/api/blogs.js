@@ -8,7 +8,7 @@ const handler = async (req, res) => {
         const { data } = await client.query({
             query: gql`
               query AllBlogssQuery {
-                posts(first: 500, where: {
+                posts(where: {
                   offsetPagination: {size: 12, offset: ${((filters.page || 1) - 1) * 12}}
                 }) {
                   pageInfo {
