@@ -18,7 +18,7 @@ export const Page = (props) => {
                 <meta name="description" content={props.seo.metaDesc} />
                 <meta property="og:title" content={props.title} />
                 <meta property="og:description" content={props.seo.metaDesc} />
-                <meta property="og:image" content={props.featuredImage} />
+                <meta property="og:image:url" content={props.featuredImage} />
 
             </Head>
             <MainMenu 
