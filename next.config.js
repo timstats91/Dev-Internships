@@ -4,10 +4,6 @@ const nextConfig = {
   images: {
     domains: [process.env.WP_IMAGES_URL],
   },
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
 };
 
 module.exports = nextConfig;
