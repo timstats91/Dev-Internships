@@ -5,54 +5,36 @@ export const Footer = () => {
 
     return (
         <div className="bg-slate-800 text-white md:px-5 pb-3 mt-6 z-20 flex flex-col">
-            <div className="max-w-5xl mx-auto py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="max-w-5xl mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-1">
                 <div className="col-span-1 px-2 grid lg:justify-items-center">
                     <div>
                         <p className="text-xl font-medium lg:text-center pb-2">Featured Guides</p>
-                        <ul className="list-disc">
-                            <li className="mb-2">
-                                <Link href="/blog/top-25-best-internships-for-computer-science-students">
-                                    25 Best Computer Science Internships
-                                </Link>
-                            </li>
-                            <li className="mb-2">
-                                <Link href="/blog/the-complete-guide-to-landing-a-google-internship">
-                                    Get An Internship At Google: A Guide
-                                </Link>
-                            </li>
-                            <li className="mb-2">
-                                <Link href="/blog/get-an-internship-at-facebook-the-complete-guide">
-                                    Get An Internship At Facebook: A Guide
-                                </Link>
-                            </li>
-                            <li className="mb-2">
-                                <Link href="/blog/get-an-internship-at-amazon-in-6-simple-steps">
-                                    Get An Internship At Amazon: A Guide
-                                </Link>
-                            </li>
-                        </ul>
+                        <Link href="/blog/top-25-best-internships-for-computer-science-students">
+                            <a className="mb-2"><p>25 Best Computer Science Internships</p></a>
+                        </Link>
+                        <Link href="/blog/the-complete-guide-to-landing-a-google-internship">
+                            <a className="mb-2"><p>Get An Internship At Google: A Guide</p></a>
+                        </Link>
+                        <Link href="/blog/get-an-internship-at-facebook-the-complete-guide">
+                            <a className="mb-2"><p>Get An Internship At Facebook: A Guide</p></a>
+                        </Link>
+                        <Link href="/blog/get-an-internship-at-amazon-in-6-simple-steps">
+                            <a className="mb-2"><p>Get An Internship At Amazon: A Guide</p></a>
+                        </Link>
                     </div>
                 </div>
                 <div className="col-span-1 px-2 grid lg:justify-items-center">
                     <div>
                         <p className="text-xl font-medium lg:text-center pb-2">Legal Information</p>
-                        <ul className="list-disc">
-                            <li className="mb-2">
-                                <Link href="/privacy-policy">
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li className="mb-2">
-                                <Link href="/terms-and-conditions">
-                                    Terms and Conditions
-                                </Link>
-                            </li>
-                            <li className="mb-2">
-                                <Link href="/affiliate-disclosure">
-                                    Affiliate Disclosure
-                                </Link>
-                            </li>
-                        </ul>
+                        <Link href="/privacy-policy">
+                            <a className="mb-2"><p>Privacy Policy</p></a>
+                        </Link>
+                        <Link href="/terms-and-conditions">
+                            <a className="mb-2"><p>Terms and Conditions</p></a>
+                        </Link>
+                        <Link href="/affiliate-disclosure">
+                            <a className="mb-2"><p>Affiliate Disclosure</p></a>
+                        </Link>
                     </div>
                 </div>
                 <div className="col-span-1 px-2 grid lg:justify-items-center">
