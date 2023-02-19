@@ -5,7 +5,7 @@ export const Footer = () => {
 
     return (
         <div className="bg-slate-800 text-white md:px-5 pb-3 mt-6 z-20 flex flex-col">
-            <div className="max-w-5xl mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-1">
+            <div className="max-w-5xl mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-0">
                 <div className="col-span-1 px-2 grid lg:justify-items-center">
                     <div>
                         <p className="text-xl font-medium lg:text-center pb-2">Featured Guides</p>
@@ -40,21 +40,20 @@ export const Footer = () => {
                 <div className="col-span-1 px-2 grid lg:justify-items-center">
                     <div>
                         <p className="text-xl font-medium lg:text-center pb-2">Contact Us</p>
-                        <Link href="tel:708-304-3175">
-                            <div className="flex cursor-pointer mb-2">
-                                <FaPaperPlane size={18} className="text-white"/>
-                                <a className="pl-2">DevInternships@gmail.com</a>
-                            </div>
-                        </Link>
-                        <Link href="tel:708-304-3175">
-                            <div className="flex cursor-pointer mb-2">
-                                <FaPhone size={18} className="text-white"/>
-                                <a className="pl-2">(708) 304-3175</a>
-                            </div>
-                        </Link>
+                        <div className="flex cursor-pointer mb-2">
+                            <FaPaperPlane size={18} className="text-white"/>
+                            <a href="mailto:devinternships@gmail.com" className="pl-2">DevInternships@gmail.com</a>
+                        </div>
+                        <div className="flex cursor-pointer mb-2">
+                            <FaPhone size={18} className="text-white"/>
+                            <a href="tel:708-304-3175" className="pl-2">(708) 304-3175</a>
+                        </div>
                         <div className="flex mb-2">
                             <FaBuilding size={18} className="text-white"/>
-                            <p className="pl-2">515 Cass St, Crete, IL 60417</p>
+                            <div className="col pl-2">
+                                <p>515 Cass St. PO Box 283</p>
+                                <p>Crete, IL 60417</p>
+                            </div>
                         </div>
                     </div>
                 </div>
